@@ -1,24 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom"
+import Register from "./pages/register/Register";
+import Login from "./pages/login/Login";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Patients from "./pages/patients/Patients";
+import Messages from "./pages/message/Message";
+import Appointment from "./pages/appointment/Appointment";
+import History from "./pages/history/History";
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/" element={ <Register/> } />
+        <Route path="/login" element={ <Login/> } />
+        <Route path="/dashboard" element={ <Dashboard/> } />
+        <Route path="/patients" element={ <Patients/> } />
+        <Route path="/messages" element={ <Messages/> } />
+        <Route path="/appointment" element={ <Appointment/> } />
+        <Route path="/medical-history" element={ <History/> } />
+      </Routes>
     </div>
   );
 }
